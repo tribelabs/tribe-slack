@@ -1,6 +1,6 @@
 {
   "name": "tribe-slack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just an abstract interface for easier sending messages into slack",
   "main": "src/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "https://github.com/tribelabs/tribe-slack/issues"
   },
   "dependencies": {
-    "slack-node": "^0.2.0"
+    "slack-node": "0.2.0"
   },
   "homepage": "https://github.com/tribelabs/tribe-slack#readme",
   "publishConfig": {
