@@ -1,0 +1,25 @@
+{
+  "name": "tribe-slack",
+  "version": "1.0.0",
+  "description": "Just an abstract interface for easier sending messages into slack",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tribelabs/tribe-slack.git"
+  },
+  "author": "Jiri Sifalda <sifalda.jiri@gmail.com> (http://jsifalda.name/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tribelabs/tribe-slack/issues"
+  },
+  "dependencies": {
+    "slack-node": "^0.2.0",
+  },
+  "homepage": "https://github.com/tribelabs/tribe-slack#readme",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  }
+}
