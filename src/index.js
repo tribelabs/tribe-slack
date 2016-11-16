@@ -9,6 +9,13 @@ module.exports = (config) => {
     return content
     .map((item) => {
       if (typeof item !== 'string') {
+        if (item && item.message && item.stack) {
+          item = {
+            message: item.message,
+            stack: item.stack
+          }
+        }
+
         item = JSON.stringify(item)
       }
 
