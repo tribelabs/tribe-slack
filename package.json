@@ -1,6 +1,6 @@
 {
   "name": "tribe-slack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just an abstract interface for easier sending messages into slack",
   "main": "src/index.js",
   "scripts": {
