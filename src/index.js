@@ -61,6 +61,19 @@ module.exports = (config) => {
       })
     },
 
+    slackToChannel: function () {
+      var args = Array.prototype.slice.call(arguments)
+      var channelName = args.shift()
+
+      if (!channelName) {
+        throw new Error('Missing channel name')
+      }
+
+      return this.slackWithConfig({
+        channel: channelName
+      }, ...args)
+    },
+
     slack: function () {
       return this.slackWithConfig(config.hook, ...arguments)
     }
