@@ -41,11 +41,7 @@ module.exports = (config) => {
 
       return new Promise((resolve, reject) => {
         if (config.disabled !== true) {
-          slack.webhook(Object.assign({
-            channel: '#server_alert',
-            username: 'PNS Server'
-            // icon_emoji: ':ghost:',
-          }, config.hook || {}, {
+          slack.webhook(Object.assign({}, config.hook || {}, {
             text: message
           }), (error, response) => {
             if (error) {
