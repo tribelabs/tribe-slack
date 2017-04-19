@@ -43,7 +43,7 @@ module.exports = (config) => {
 
       return new Promise((resolve, reject) => {
         if (config.disabled !== true) {
-          var params = Object.assign({}, opts, {
+          var params = Object.assign({}, config.hook, opts, {
             text: message
           })
 
