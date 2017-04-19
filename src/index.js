@@ -35,15 +35,19 @@ module.exports = (config) => {
       }
     },
 
-    slack: function () {
-      var message = getMessage(arguments)
-      console.log.apply(console, ['Slack:'].concat([].slice.call(arguments)))
+    slackWithConfig: function () {
+      var args = Array.prototype.slice.call(arguments)
+      var opts = args.shift()
+      var message = getMessage(args)
+      console.log(...['Slack:'].concat(args))
 
       return new Promise((resolve, reject) => {
         if (config.disabled !== true) {
-          slack.webhook(Object.assign({}, config.hook || {}, {
+          var params = Object.assign({}, opts, {
             text: message
-          }), (error, response) => {
+          })
+
+          slack.webhook(params, (error, response) => {
             if (error) {
               console.warn('Sending to slack failed', error)
               reject(error)
@@ -55,6 +59,10 @@ module.exports = (config) => {
           resolve(null)
         }
       })
+    },
+
+    slack: function () {
+      return this.slackWithConfig(config.hook, ...arguments)
     }
   }
 }
